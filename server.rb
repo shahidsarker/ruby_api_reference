@@ -19,5 +19,6 @@ post '/weather' do
   # query hash includes the query parameters I want to pass in the GET request
   req = HTTParty.get(@@url, query: { appid: ENV['WEATHER_SAMPLE_KEY'], zip: @zip_param_from_form })
 
+  # 
   data = JSON.parse(req.body)
 end
