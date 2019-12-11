@@ -20,5 +20,8 @@ post '/weather' do
   req = HTTParty.get(@@url, query: { appid: ENV['WEATHER_SAMPLE_KEY'], zip: @zip_param_from_form })
 
   # 
-  data = JSON.parse(req.body)
+  @data = JSON.parse(req.body)
+  puts @data
+
+erb :weather  
 end
